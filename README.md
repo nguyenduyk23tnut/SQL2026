@@ -131,6 +131,7 @@ GO
 ```
 <img width="1919" height="1079" alt="Screenshot 2026-05-11 002848" src="https://github.com/user-attachments/assets/f777786b-f1b3-4130-9840-0752a5bbf98d" />
 
+
   -  Test event 1:
 
 ```sql
@@ -169,6 +170,14 @@ SELECT * FROM Contracts;
 SELECT * FROM Assets;
 ```
 <img width="1919" height="1079" alt="Screenshot 2026-05-11 003054" src="https://github.com/user-attachments/assets/264b45d0-ca9f-48bb-9a47-d105c2bd4351" />
+
+  * Tổng kết event 1:
+
+-Tạo khách hàng và hợp đồng vay mới.
+
+-Thêm tài sản cầm cố cho hợp đồng.
+
+-Kiểm tra dữ liệu đã được lưu thành công.
 
 ## Event 2. TÍNH TOÁN CÔNG NỢ
   -  Tạo Function:
@@ -242,6 +251,14 @@ SELECT
 FROM Contracts;
 ```
 <img width="1919" height="1079" alt="Screenshot 2026-05-11 003155" src="https://github.com/user-attachments/assets/e77e9a85-779b-41ae-bb10-48fab8f11b53" />
+
+  * Tổng kết event 2:
+
+-Tính tổng số tiền khách phải trả.
+
+-Áp dụng lãi đơn và lãi kép theo thời gian.
+
+-Hiển thị công nợ hiện tại của hợp đồng.
 
 ## Event 3. XỬ LÝ TRẢ NỢ
 
@@ -332,6 +349,15 @@ SELECT * FROM Assets;
 ```
 <img width="1919" height="1079" alt="Screenshot 2026-05-11 003259" src="https://github.com/user-attachments/assets/11d0672c-0f24-4a88-88e7-e9445a2a3ea0" />
 
+  * Tổng kết event 3:
+
+-Thực hiện thanh toán cho hợp đồng vay.
+
+-Cập nhật trạng thái hợp đồng sau khi trả tiền.
+
+-Lưu lịch sử thanh toán của khách hàng.
+
+
 ## Event 4. DANH SÁCH NỢ XẤU
 
   -  Thêm dữ liệu quá hạn:
@@ -388,6 +414,14 @@ ON ct.CustomerID = c.CustomerID
 WHERE ct.Status = N'Quá hạn';
 ```
 <img width="1919" height="1079" alt="Screenshot 2026-05-11 003417" src="https://github.com/user-attachments/assets/7d468a08-7cd9-4871-865d-bb72eb8ea12f" />
+
+  * Tổng kết event 4:
+
+-Tạo dữ liệu hợp đồng quá hạn.
+
+-Hiển thị khách hàng đang nợ xấu.
+
+-Tính số ngày quá hạn và tổng tiền nợ.
 
 ## Event 5. QUẢN LÝ THANH LÝ TÀI SẢN
 
@@ -478,6 +512,14 @@ SELECT * FROM Assets;
 ```
 <img width="1919" height="1079" alt="Screenshot 2026-05-11 003737" src="https://github.com/user-attachments/assets/9b4fdd76-c480-48bc-bd1d-217684a5a474" />
 
+   * Tổng kết event 5:
+
+-Tự động cập nhật trạng thái hợp đồng quá hạn.
+
+-Chuyển tài sản sang trạng thái thanh lý.
+
+-Kiểm tra kết quả cập nhật tài sản.
+
 ## EVENT BỔ SUNG — GIA HẠN HỢP ĐỒNG
 
   -  Procedure gia hạn:
@@ -514,6 +556,14 @@ EXEC sp_ExtendContract 1;
 SELECT * FROM Contracts;
 ```
 <img width="1919" height="1079" alt="Screenshot 2026-05-11 003810" src="https://github.com/user-attachments/assets/4fe66b78-fe10-4aed-a005-9b14e96a869f" />
+
+  * Tổng kết event:
+
+-Gia hạn thời gian vay cho khách hàng.
+
+-Cập nhật lại các mốc deadline.
+
+-Đưa hợp đồng về trạng thái đang vay.
 
 ## EVENT BỔ SUNG — AUDIT LOG
 
@@ -561,3 +611,11 @@ EXEC sp_PayDebt
 SELECT * FROM AuditLogs;
 ```
 <img width="1919" height="1079" alt="Screenshot 2026-05-11 003838" src="https://github.com/user-attachments/assets/ab621abf-6d1c-4146-be1f-da96c11b8739" />
+
+  * Tổng kết event:
+
+-Ghi nhận lịch sử giao dịch thanh toán.
+
+-Theo dõi các hoạt động trả nợ của khách.
+
+-Kiểm tra dữ liệu log sau khi thanh toán.
