@@ -6,6 +6,36 @@
 - Mã SV: K235480106102
 - Chủ đề: Quản lý các hợp đồng vay tiền thế chấp tài sản
 
+## Mô tả bài toán
+  Hệ thống quản lý cầm đồ được xây dựng nhằm hỗ trợ số hóa toàn bộ quá trình quản lý hợp đồng vay tài sản. Khi khách hàng mang tài sản đến cầm cố, hệ thống sẽ lưu thông tin khách hàng, tài sản thế chấp và số tiền vay tương ứng. Mỗi hợp đồng sẽ được thiết lập các mốc thời gian thanh toán nhằm phục vụ việc tính lãi và theo dõi trạng thái khoản vay.
+
+  Hệ thống áp dụng hai hình thức tính lãi:
+
+  -  Lãi đơn trước thời hạn Deadline1.
+  -  Lãi kép khi hợp đồng quá hạn sau Deadline1.
+
+Ngoài ra, hệ thống còn hỗ trợ:
+
+  -  quản lý thanh toán công nợ,
+  -  cập nhật trạng thái hợp đồng,
+  -  theo dõi khách hàng nợ xấu,
+  -  quản lý thanh lý tài sản quá hạn,
+  -  gia hạn hợp đồng,
+  -  lưu lịch sử giao dịch thông qua Audit Log.
+
+Thông qua cơ sở dữ liệu này, cửa hàng cầm đồ có thể quản lý dữ liệu tập trung, giảm sai sót trong quá trình vận hành và nâng cao hiệu quả theo dõi công nợ cũng như tài sản cầm cố.
+
+## ERD
+<img width="1266" height="787" alt="Screenshot 2026-05-12 191738" src="https://github.com/user-attachments/assets/07c683a7-15cf-42a7-bc6b-17db00412945" />
+ Các mối quan hệ:
+ 
+Customers (1) ---- (N) Contracts
+
+Contracts (1) ---- (N) Assets
+
+Contracts (1) ---- (N) Payments
+
+Contracts (1) ---- (N) AuditLogs
 ## Tạo database và các bảng
   - Tạo database:
 
